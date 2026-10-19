@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>   // 講義沒寫，但要明確 include 才能用 QTextStream
+#include <QFileDialog>   // 新增：開檔對話框要用
 
 QString mFilename = "D:/test/myfile.csv";   // 存檔路徑（D:/test 資料夾要先存在）
 
@@ -104,15 +105,20 @@ void MyWidget::on_pushButton_2_clicked()
 // 匯入按鈕
 void MyWidget::on_pushButton_3_clicked()
 {
-    QString text = Read(mFilename);
+    // 開啟檔案對話框，讓使用者選擇要匯入的 .csv 檔
+    QString fileName = QFileDialog::getOpenFileName(this,
+        QStringLiteral("開啟 CSV 檔"), "D:/test",
+        QStringLiteral("CSV 檔 (*.csv);;任何檔案 (*.*)"));
+    if (fileName.isEmpty()) return;      // 使用者按了取消
+
+    QString text = Read(fileName);       // 改讀使用者選的檔案
     if (text.isEmpty()) return;          // 檔案不存在或是空的
     ui->tableWidget->setRowCount(0);     // 先清空表格，避免重複匯入時資料疊兩份
-    // 先依換行切成一列一列；最後一行結尾的 \n 會多切出一個空字串，用 SkipEmptyParts 丟掉
     QStringList lines = text.split("\n", Qt::SkipEmptyParts);
 
     for (const QString &line : lines) {
-        QStringList fields = line.split(",");   // 再依逗號切成欄位
-        int row = ui->tableWidget->rowCount();  // 新列的索引
+        QStringList fields = line.split(",");
+        int row = ui->tableWidget->rowCount();
         ui->tableWidget->insertRow(row);
 
         for (int j = 0; j < ui->tableWidget->columnCount() && j < fields.size(); j++) {
