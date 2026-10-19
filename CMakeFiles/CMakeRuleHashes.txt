@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+c357329ecbd3f5769d3733ed69d64ac1 CMakeFiles/ContactBook_autogen
+7d2e1ada58ac6aa1da764f996eb3845d ContactBook_autogen/timestamp
