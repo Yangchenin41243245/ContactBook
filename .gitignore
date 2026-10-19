@@ -18,3 +18,16 @@ moc_*.cpp
 ui_*.h
 qrc_*.cpp
 .qmake.stash
+
+# CMake / Qt Creator 產生的建置檔案（in-source build）
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+.cmake/
+.qt/
+.qtc_clangd/
+.qtcreator/
+qtcsettings.cmake
+ContactBook_autogen/
+Testing/
+*.manifest

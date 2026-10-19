@@ -1,9 +1,0 @@
-D:/Qt_ex/ContactBook/CMakeFiles/ContactBook.dir
-D:/Qt_ex/ContactBook/CMakeFiles/edit_cache.dir
-D:/Qt_ex/ContactBook/CMakeFiles/rebuild_cache.dir
-D:/Qt_ex/ContactBook/CMakeFiles/list_install_components.dir
-D:/Qt_ex/ContactBook/CMakeFiles/install.dir
-D:/Qt_ex/ContactBook/CMakeFiles/install/local.dir
-D:/Qt_ex/ContactBook/CMakeFiles/install/strip.dir
-D:/Qt_ex/ContactBook/CMakeFiles/ContactBook_autogen_timestamp_deps.dir
-D:/Qt_ex/ContactBook/CMakeFiles/ContactBook_autogen.dir
