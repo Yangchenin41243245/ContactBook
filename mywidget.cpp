@@ -3,9 +3,9 @@
 
 #include <QFile>
 #include <QDebug>
-#include <QTextStream>   // 講義沒寫，但 Qt6 要明確 include 才能用 QTextStream
+#include <QTextStream>   // 講義沒寫，但要明確 include 才能用 QTextStream
 
-QString mFilename = "D:/test/myfile.txt";   // 存檔路徑（D:/test 資料夾要先存在）
+QString mFilename = "D:/test/myfile.csv";   // 存檔路徑（D:/test 資料夾要先存在）
 
 // 自定義 Write：把字串寫進 txt 檔
 void Write(QString Filename, QString str)
